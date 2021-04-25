@@ -5,7 +5,10 @@ services:
     container_name: Samba
     volumes:
       - '~/docker/samba/compartido:/lordpedal'
-      - '~/docker/samba/smb.conf:/etc/samba/smb.conf'
+      - '~/docker/samba/smb.conf:/config/smb.conf'
+      - 'smbpasswd:/var/lib/samba/private'
+      - 'etc:/etc/'
+
     ports:
       - "137:137"
       - "138:138"
@@ -14,6 +17,10 @@ services:
     restart: always
     networks:
       - ldap
+
+volumes:
+  smbpasswd:
+  etc:
 
 networks:
   ldap:

@@ -5,7 +5,7 @@ services:
     container_name: openldap
     environment:
       LDAP_LOG_LEVEL: "256"
-      LDAP_ORGANISATION: "Example Inc."
+      LDAP_ORGANISATION: "Ramirez Inc."
       LDAP_DOMAIN: "ramirez.org"
       LDAP_BASE_DN: ""
       LDAP_ADMIN_PASSWORD: "admin"
@@ -33,9 +33,9 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - /var/lib/ldap
-      - /etc/ldap/slapd.d
-      - /container/service/slapd/assets/certs/
+      - ldap:/var/lib/ldap
+      - sldap:/etc/ldap/slapd.d
+      - certs:/container/service/slapd/assets/certs/
     ports:
       - "389:389"
       - "636:636"
@@ -57,6 +57,10 @@ services:
       - openldap
     networks:
       - ldap
+volumes:
+  ldap:
+  sldap:
+  certs:
 
 networks:
   ldap:

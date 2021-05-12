@@ -1,4 +1,20 @@
+linux
 pepe
-gonzalez
-id pgonzalez
-p:pgonzalez!
+torres
+id ptorres
+p:ptorres&&1
+
+windows
+pol
+perez
+id pperez
+p:p!"per·$ez
+
+redhat
+nurf
+cases
+id ncases
+p:ncases!
+
+admin LDAP
+74RTTE$$w1

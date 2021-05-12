@@ -17,7 +17,6 @@ services:
     restart: always
     networks:
       - ldap
-
 volumes:
   smbpasswd:
   etc:
